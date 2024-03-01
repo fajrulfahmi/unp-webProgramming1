@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Voice IOT</title>
+
+        <!-- Montserrat Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Material Icons -->
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+            rel="stylesheet"
+        />
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- JS -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/responsiveVoice.js"></script>
+    </head>
+    <body>
+        <div class="grid-container">
+            <!-- Header -->
+            <header class="header">
+                <div class="menu-icon" onclick="openSidebar()">
+                    <span class="material-icons-outlined">menu</span>
+                </div>
+                <!-- <h2>Control Area IOT</h2> -->
+            </header>
+            <!-- End Header -->
+
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">MENU</div>
+                    <span
+                        class="material-icons-outlined"
+                        onclick="closeSidebar()"
+                        >close</span
+                    >
+                </div>
+
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <a href="index.html">
+                            <span class="material-icons-outlined">home</span>
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list-item">
+                        <a href="dashboard.html">
+                            <span class="material-icons-outlined"
+                                >dashboard</span
+                            >
+                            Dashboard
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- End Sidebar -->
+
+            <!-- Main -->
+            <main class="main-container">
+                <div class="main-title">
+                    <h2>DASHBOARD</h2>
+                </div>
+
+                <div class="voice-area">
+                    <div class="mic">
+                        <button onclick="runSpeechRecognition()">
+                            <span class="material-icons-outlined">mic</span>
+                        </button>
+                        <input id="output" class="text-mic" type="text" />
+                    </div>
+                </div>
+
+                <div class="main-cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3>DEVICE 1</h3>
+                            <span class="material-icons-outlined"
+                                >inventory_2</span
+                            >
+                        </div>
+                        <div class="toggle-btn" id="unact">
+                            <div class="inner-circle"></div>
+                        </div>
+                        <div class="toggle-btn active" id="act">
+                            <div class="inner-circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3>DEVICE 2</h3>
+                            <span class="material-icons-outlined"
+                                >category</span
+                            >
+                        </div>
+                        <div class="toggle-btn1" id="unact1">
+                            <div class="inner-circle"></div>
+                        </div>
+                        <div class="toggle-btn1 active" id="act1">
+                            <div class="inner-circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <h3>DEVICE 3</h3>
+                            <span class="material-icons-outlined">groups</span>
+                        </div>
+                        <div class="toggle-btn2" id="unact2">
+                            <div class="inner-circle"></div>
+                        </div>
+                        <div class="toggle-btn2 active" id="act2">
+                            <div class="inner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts">
+                    <p>
+                        Perintah Suara : <br />
+                        <br />
+                        • Nyalakan lampu merah<br />
+                        • Matikan lampu merah<br /><br />
+                        • Nyalakan lampu kuning <br />
+                        • Matikan lampu kuning<br /><br />
+                        • Nyalakan lampu hijau<br />
+                        • Matikan lampu hijau<br /><br />
+                        • Nyalakan semua lampu<br />
+                        • Matikan semua lampu<br />
+                    </p>
+                </div>
+            </main>
+            <!-- End Main -->
+        </div>
+
+        <!-- Custom JS -->
+        <script src="js/sideBar.js"></script>
+    </body>
+</html>

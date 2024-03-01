@@ -1,0 +1,283 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1d2634;
+    color: #9e9ea4;
+    font-family: "Montserrat", sans-serif;
+    overflow: hidden;
+}
+
+.material-icons-outlined {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 35px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+        "sidebar header header header"
+        "sidebar main main main";
+    height: 100vh;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+    grid-area: header;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 30px;
+    box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+}
+
+.menu-icon {
+    display: none;
+}
+
+/* ---------- SIDEBAR ---------- */
+
+#sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    background-color: #263043;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 90px;
+}
+
+.sidebar-title span {
+    padding-top: 15px;
+    padding-left: 30px;
+    display: none;
+}
+
+.sidebar-brand {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sidebar-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+.sidebar-list-item {
+    padding: 20px 20px;
+    font-size: 18px;
+}
+
+.sidebar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.sidebar-list-item > a {
+    text-decoration: none;
+    color: #9e9ea4;
+}
+
+.sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+}
+
+/* ---------- MAIN ---------- */
+
+.main-container {
+    grid-area: main;
+    overflow-x: hidden;
+    padding: 20px 20px;
+    padding-top: 0;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.main-container::-webkit-scrollbar {
+    display: none;
+}
+
+.main-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mic {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 10px;
+}
+
+.mic button {
+    padding: 15px 2%;
+    border-radius: 10px;
+}
+.mic input {
+    width: 100%;
+    font-size: large;
+    background-color: white;
+    padding-left: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.main-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 37px;
+    border-radius: 10px;
+}
+
+.card:first-child {
+    background-color: #d50000;
+}
+
+.card:nth-child(2) {
+    background-color: #ff6d00;
+}
+
+.card:nth-child(3) {
+    background-color: #2e7d32;
+}
+
+.card:nth-child(4) {
+    background-color: #d50000;
+}
+
+.card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-inner > .material-icons-outlined {
+    font-size: 45px;
+}
+
+/* Toggle Button */
+.ledMerah,
+.ledKuning,
+.ledHijau {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 100%;
+}
+
+.ledMerah {
+    background: red;
+}
+
+.ledKuning {
+    background: yellow;
+}
+
+.ledHijau {
+    background: green;
+}
+
+.toggle-btn,
+.toggle-btn1,
+.toggle-btn2 {
+    width: 80px;
+    height: 40px;
+    background: gray;
+    border-radius: 30px;
+    padding: 5px;
+    transition: all 300ms ease-in-out;
+}
+.toggle-btn > .inner-circle,
+.toggle-btn1 > .inner-circle,
+.toggle-btn2 > .inner-circle {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    transition: all 300ms ease-in-out;
+}
+.toggle-btn.active {
+    background: red;
+    transition-delay: 0.5s;
+}
+.toggle-btn1.active {
+    background: yellow;
+    transition-delay: 0.5s;
+}
+.toggle-btn2.active {
+    background: green;
+    transition-delay: 0.5s;
+}
+
+.toggle-btn.active > .inner-circle,
+.toggle-btn1.active > .inner-circle,
+.toggle-btn2.active > .inner-circle {
+    margin-left: 40px;
+}
+
+.charts {
+    background-color: #263043;
+    border-radius: 20px;
+}
+
+.charts p {
+    padding: 20px;
+    color: #9e9ea4;
+}
+/* ---------- MEDIA QUERIES ---------- */
+
+@media screen and (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 3fr;
+        grid-template-areas:
+            "header"
+            "main";
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    .menu-icon {
+        display: inline;
+    }
+
+    .sidebar-title > span {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+
+    .charts {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header-left {
+        display: none;
+    }
+}
